@@ -25,7 +25,9 @@
     "paths": {
       "components/*": ["components/*"],
       "hooks/*": ["hooks/*"],
-      "pages/*": ["pages/*"]
+      "pages/*": ["pages/*"],
+      "layout/*": ["layout/*"],
+      "data/*": ["data/*"]
     }
   },
   "include": [
