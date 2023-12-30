@@ -23,11 +23,24 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "src",
     "paths": {
-      "components/*": ["components/*"],
-      "hooks/*": ["hooks/*"],
-      "pages/*": ["pages/*"],
-      "layout/*": ["layout/*"],
-      "data/*": ["data/*"]
+      "components/*": [
+        "components/*"
+      ],
+      "hooks/*": [
+        "hooks/*"
+      ],
+      "pages/*": [
+        "pages/*"
+      ],
+      "layout/*": [
+        "layout/*"
+      ],
+      "data/*": [
+        "data/*"
+      ],
+      "variables": [
+        "assets/variables/*"
+      ]
     }
   },
   "include": [
