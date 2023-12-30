@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { paths } from "./paths";
+import { paths } from "paths";
 import { Login, Register, Products, Orders, Settings, Notification, Notes, ActiveSessions, Users, HomePage } from "pages";
 import { Layout } from "layout/Layout";
 

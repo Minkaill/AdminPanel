@@ -40,6 +40,18 @@
       ],
       "variables": [
         "assets/variables/*"
+      ],
+      "store": [
+        "store"
+      ],
+      "paths": [
+        "paths"
+      ],
+      "routes": [
+        "routes"
+      ],
+      "actions": [
+        "lib/actions"
       ]
     }
   },

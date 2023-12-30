@@ -1,11 +1,18 @@
 import { navigationLinks } from "data/template"
 import cs from "./sidebar.module.scss"
 import { useNavigate } from "react-router-dom"
+import { useAppSelector } from "hooks/reduxHelper"
+import { selectedIsOpen } from "actions"
 
 export const Sidebar = () => {
     const navigate = useNavigate()
+    const isOpen = useAppSelector(selectedIsOpen)
 
-    return <div className={cs.wrapper}>
+    const sidebarOpenStyle = {
+        left: isOpen ? "-260px" : "0px",
+    }
+
+    return <div style={sidebarOpenStyle} className={cs.wrapper}>
         <div className={cs.profile}></div>
         <div className={cs.nav_links}>
             {navigationLinks.map((nav, idx) => (

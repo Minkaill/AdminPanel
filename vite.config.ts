@@ -11,7 +11,11 @@ export default defineConfig({
       pages: "/src/pages",
       layout: "/src/layout",
       data: "/src/data",
-      variables: "/src/assets/variables"
+      variables: "/src/assets/variables",
+      store: "/src/store",
+      paths: "/src/paths",
+      routes: "/src/routes",
+      actions: "/src/lib/actions"
     }
   }
 })
