@@ -1,0 +1,14 @@
+.content {
+    padding: 36px 20px;
+}
+
+.sidebar_toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+        font-size: 26px;
+        cursor: pointer;
+    }
+}

@@ -6,42 +6,42 @@ import { Layout } from "layout/Layout";
 export const router = createBrowserRouter([
     {
         path: paths.HOME,
-        element: <Layout><HomePage /></Layout>
+        element: <Layout title="Главная"><HomePage /></Layout>
     },
     {
         path: paths.LOGIN,
-        element: <Layout><Login /></Layout>
+        element: <Layout title="Вход"><Login /></Layout>
     },
     {
         path: paths.REGISTER,
-        element: <Layout><Register /></Layout>
+        element: <Layout title="Регистрация"><Register /></Layout>
     },
     {
         path: paths.PRODUCTS,
-        element: <Layout><Products /></Layout>
+        element: <Layout title="Продукты"><Products /></Layout>
     },
     {
         path: paths.ORDERS,
-        element: <Layout><Orders /></Layout>
+        element: <Layout title="Заказы"><Orders /></Layout>
     },
     {
         path: paths.SETTINGS,
-        element: <Layout><Settings /></Layout>
+        element: <Layout title="Настройки"><Settings /></Layout>
     },
     {
         path: paths.NOTIFICATION,
-        element: <Layout><Notification /></Layout>
+        element: <Layout title="Уведомления"><Notification /></Layout>
     },
     {
         path: paths.NOTES,
-        element: <Layout><Notes /></Layout>
+        element: <Layout title="Заметки"><Notes /></Layout>
     },
     {
         path: paths.ACTIVESESSIONS,
-        element: <Layout><ActiveSessions /></Layout>
+        element: <Layout title="Активны сеансы"><ActiveSessions /></Layout>
     },
     {
         path: paths.USERS,
-        element: <Layout><Users /></Layout>
+        element: <Layout title="Пользователи"><Users /></Layout>
     },
 ])
