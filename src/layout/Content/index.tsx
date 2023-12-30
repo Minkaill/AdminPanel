@@ -16,11 +16,11 @@ export const Content: React.FC<ContentProps> = ({ children, title }) => {
         dispatch(setOpen())
     }
 
-    const sidebarOpenStyle = {
+    const contentToggleLeft = {
         left: isOpen ? "-260px" : "0px",
     }
 
-    return <div style={sidebarOpenStyle} className={cs.content}>
+    return <div style={contentToggleLeft} className={cs.content}>
         <div onClick={onOpen} className={cs.sidebar_toggle}>
             <MenuOutlined />
             <h1>{title}</h1>
