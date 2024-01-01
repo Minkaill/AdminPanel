@@ -52,7 +52,17 @@
       ],
       "actions": [
         "lib/actions"
-      ]
+      ],
+      "types": [
+        "models"
+      ],
+      "api": [
+        "api"
+      ],
+      "middleware": [
+        "middleware"
+      ],
+      "services": ["lib/services"]
     }
   },
   "include": [

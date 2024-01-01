@@ -5,7 +5,7 @@ import { selectedIsOpen, setOpen } from 'actions';
 import cs from "./content.module.scss"
 interface ContentProps {
     children: React.ReactNode,
-    title: string
+    title?: string
 }
 
 export const Content: React.FC<ContentProps> = ({ children, title }) => {
@@ -21,10 +21,10 @@ export const Content: React.FC<ContentProps> = ({ children, title }) => {
     }
 
     return <div style={contentToggleLeft} className={cs.content}>
-        <div onClick={onOpen} className={cs.sidebar_toggle}>
+        {title && <div onClick={onOpen} className={cs.sidebar_toggle}>
             <MenuOutlined />
             <h1>{title}</h1>
-        </div>
+        </div>}
         {children}
     </div>
 }

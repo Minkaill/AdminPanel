@@ -15,7 +15,11 @@ export default defineConfig({
       store: "/src/store",
       paths: "/src/paths",
       routes: "/src/routes",
-      actions: "/src/lib/actions"
+      actions: "/src/lib/actions",
+      types: "/src/models",
+      api: "/src/api",
+      middleware: "/src/middleware",
+      services: "/src/lib/services"
     }
   }
 })

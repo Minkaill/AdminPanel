@@ -1,18 +1,20 @@
 import { navigationLinks } from "data/template"
 import cs from "./sidebar.module.scss"
 import { useNavigate } from "react-router-dom"
-import { useAppSelector } from "hooks/reduxHelper"
-import { selectedIsOpen } from "actions"
+import { useAppDispatch, useAppSelector } from "hooks/reduxHelper"
+import { selectedIsOpen, setOpen } from "actions"
+import { CloseOutlined } from "@ant-design/icons"
 
 export const Sidebar = () => {
     const navigate = useNavigate()
+    const dispatch = useAppDispatch()
     const isOpen = useAppSelector(selectedIsOpen)
 
-    const sidebarOpenStyle = {
-        left: isOpen ? "-260px" : "0px",
+    const onOpen = () => {
+        dispatch(setOpen())
     }
 
-    return <div style={sidebarOpenStyle} className={cs.wrapper}>
+    return <div className={`${cs.wrapper} ${isOpen ? cs.wrapper_mb : ""}`}>
         <div className={cs.profile}></div>
         <div className={cs.nav_links}>
             {navigationLinks.map((nav, idx) => (
@@ -25,6 +27,10 @@ export const Sidebar = () => {
 
         <div className={cs.footer}>
 
+        </div>
+
+        <div onClick={onOpen} className={cs.sidebar_toggle}>
+            <CloseOutlined />
         </div>
     </div>
 }
