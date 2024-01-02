@@ -39,7 +39,7 @@
         "data/*"
       ],
       "variables": [
-        "assets/variables/*"
+        "assets/variables/variables.scss"
       ],
       "store": [
         "store"

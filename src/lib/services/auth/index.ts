@@ -1,5 +1,5 @@
-import { api } from "api/baseQueryRTK";
 import { User, UserDTO, UserLG, UserRG } from "types";
+import { api } from 'api';
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
@@ -25,3 +25,5 @@ export const authApi = api.injectEndpoints({
         })
     })
 })
+
+export const { useLoginMutation, useRegisterMutation, useCurrentQuery } = authApi

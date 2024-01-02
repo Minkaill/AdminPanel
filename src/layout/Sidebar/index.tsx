@@ -1,7 +1,7 @@
 import { navigationLinks } from "data/template"
 import cs from "./sidebar.module.scss"
 import { useNavigate } from "react-router-dom"
-import { useAppDispatch, useAppSelector } from "hooks/reduxHelper"
+import { useAppDispatch, useAppSelector } from "hooks/useRedux/index"
 import { selectedIsOpen, setOpen } from "actions"
 import { CloseOutlined } from "@ant-design/icons"
 

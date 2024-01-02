@@ -1,0 +1,100 @@
+@import "variables";
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.container {
+    max-width: 850px;
+    padding: 60px 24px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: $window-bg;
+    border-radius: 6px;
+
+    button {
+        width: 100%;
+        height: 40px;
+        border: none;
+        font-size: 18px;
+        color: white;
+        background-color: $button-color;
+        cursor: pointer;
+    }
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    p {
+        color: $smoke-color;
+    }
+
+    a {
+        color: $link-color;
+        cursor: pointer;
+    }
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    input {
+        border: none;
+        padding: 12px;
+        background-color: $bg-root;
+        border-radius: 4px;
+        color: white;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.support {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-top: 30px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+
+        input {
+            cursor: pointer;
+        }
+    }
+
+    a {
+        color: $link-color;
+        cursor: pointer;
+    }
+}
