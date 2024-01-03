@@ -1,5 +1,4 @@
 import { Sidebar, Content } from "layout"
-import { Toaster } from "react-hot-toast"
 import { IsAuth } from "hooks/useAuth"
 
 import cs from "./layout.module.scss"

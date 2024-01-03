@@ -7,6 +7,7 @@
     padding: 36px 20px;
     position: relative;
     transition: all 0.1s ease-in-out;
+    box-sizing: border-box;
 }
 
 .wrapper_mb {
@@ -18,19 +19,47 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    flex-grow: 1;
 
-    .nav_element {
+}
+
+.nav_element {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+        background-color: #FF7807;
+        border-radius: 4px;
+        transition: all 0.1s ease-in-out;
+    }
+}
+
+.footer {
+    width: 100%;
+    flex-grow: 0;
+
+    .logout {
         display: flex;
         align-items: center;
         gap: 10px;
-        cursor: pointer;
         padding: 12px;
-        transition: all 0.1s ease-in-out;
+        cursor: pointer;
 
         &:hover {
             background-color: #FF7807;
             border-radius: 4px;
             transition: all 0.1s ease-in-out;
+        }
+
+        button {
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            color: white;
         }
     }
 }

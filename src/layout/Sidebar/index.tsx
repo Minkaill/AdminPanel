@@ -3,7 +3,7 @@ import cs from "./sidebar.module.scss"
 import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "hooks/useRedux/index"
 import { selectedIsOpen, setOpen } from "actions"
-import { CloseOutlined } from "@ant-design/icons"
+import { CloseOutlined, LogoutOutlined } from "@ant-design/icons"
 
 export const Sidebar = () => {
     const navigate = useNavigate()
@@ -26,7 +26,10 @@ export const Sidebar = () => {
         </div>
 
         <div className={cs.footer}>
-
+            <div className={cs.logout}>
+                <LogoutOutlined />
+                <button>Выйти</button>
+            </div>
         </div>
 
         <div onClick={onOpen} className={cs.sidebar_toggle}>
