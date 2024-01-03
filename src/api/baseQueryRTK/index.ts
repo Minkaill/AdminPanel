@@ -4,7 +4,7 @@ import { RootState } from "store";
 const baseQuery = fetchBaseQuery({
     baseUrl: "http://localhost:1337/api/",
     prepareHeaders: (headers, { getState }) => {
-        const token = (getState() as RootState) || localStorage.getItem("token");
+        const token = (getState() as RootState).authApi.queries.jwt || localStorage.getItem("token");
 
         if (token && token !== null) {
             headers.set("authorization", `Bearer ${token}`)
