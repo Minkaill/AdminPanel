@@ -20,9 +20,11 @@ export const Login = () => {
     })
 
     const onSubmit: SubmitHandler<UserLG> = (data) => {
-        toast.promise(onLogin(data).unwrap().then(() => {
-            reset(),
+        toast.promise(onLogin(data).unwrap().then((dt) => {
+            if (dt) {
                 navigate(paths.HOME)
+            }
+            reset()
         }), {
             loading: 'Авторизация...',
             success: "Вы успешно авторизовались!",
