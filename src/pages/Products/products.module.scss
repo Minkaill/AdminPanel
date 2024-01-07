@@ -8,6 +8,29 @@
     gap: 20px;
 }
 
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    background-color: $button-color;
+    padding: 4px;
+    border-radius: 4px;
+
+    button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+}
+
 .live_search {
     width: 100%;
     display: flex;
@@ -39,7 +62,7 @@
 
     thead {
         width: 100%;
-        background-color: #141415;
+        background-color: $bg-root;
 
         text-align: left;
 

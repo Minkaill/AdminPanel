@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SearchOutlined } from "@ant-design/icons"
+import { PlusOutlined, SearchOutlined } from "@ant-design/icons"
 import { useGetProductsQuery } from "services";
 import { columns } from "./data";
 
@@ -35,9 +35,16 @@ export const Products = () => {
 
     return (
         <div className={cs.wrapper}>
-            <div className={cs.live_search}>
-                <SearchOutlined />
-                <input type="text" />
+            <div className={cs.header}>
+                <div className={cs.live_search}>
+                    <SearchOutlined />
+                    <input type="text" />
+                </div>
+
+                <div className={cs.add}>
+                    <PlusOutlined />
+                    <button>Добавить</button>
+                </div>
             </div>
 
             <table className={cs.table}>
