@@ -1,15 +1,17 @@
 import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
-import { popupReducer } from "actions";
+import { popup } from "actions";
 import { api } from "api";
 import { listenerMiddleware } from "middleware";
-import { authApi } from "services";
+import { productsApi } from "services";
+import { authorization } from 'actions';
 
 export const store = configureStore({
     reducer: {
         "api": api.reducer,
-        "authApi": authApi.reducer,
-
-        popup: popupReducer,
+        "productsApi": productsApi.reducer,
+        
+        authorization,
+        popup
     },
     middleware: (getDefaultMidddleware) =>
         getDefaultMidddleware()

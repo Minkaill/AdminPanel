@@ -5,15 +5,16 @@ import cs from "./layout.module.scss"
 
 interface LayoutProps {
     children: React.ReactNode,
-    title: string
+    title?: string,
+    text?: string
 }
 
-export const Layout: React.FC<LayoutProps> = ({ children, title }) => {
+export const Layout: React.FC<LayoutProps> = ({ children, title, text }) => {
     return (
         <div className={cs.wrapper}>
             <Sidebar />
             <IsAuth>
-                <Content title={title}>{children}</Content>
+                <Content text={text} title={title}>{children}</Content>
             </IsAuth>
         </div>
     )

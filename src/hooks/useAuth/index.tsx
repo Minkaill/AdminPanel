@@ -1,6 +1,5 @@
-import { paths } from "paths"
-import { useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { userState } from "actions"
+import { useAppSelector } from "hooks"
 import { useCurrentQuery } from "services"
 
 interface IsAuthProps {
@@ -8,19 +7,9 @@ interface IsAuthProps {
 }
 
 export const IsAuth: React.FC<IsAuthProps> = ({ children }) => {
-    const { isLoading, data } = useCurrentQuery()
-    const navigate = useNavigate()
-
-    // requires correction
-    useEffect(() => {
-        if (!data) {
-            const timeoutId = setTimeout(() => {
-                navigate(paths.LOGIN)
-            }, 500);
-
-            return () => clearTimeout(timeoutId);
-        }
-    }, [isLoading, data, navigate]);
+    const { isLoading } = useCurrentQuery()
+    const user = useAppSelector(userState)
+    console.log(user)
 
     if (isLoading) return <h1>Loading...</h1>;
 

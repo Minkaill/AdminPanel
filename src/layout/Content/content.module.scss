@@ -1,4 +1,8 @@
 .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     padding: 36px 20px;
     position: relative;
     transition: all 0.1s ease-in-out;
@@ -6,8 +10,16 @@
 
 .sidebar_toggle {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h1 {
+        margin-top: 12px;
+    }
+
+    p {
+        font-size: 14px;
+    }
 
     svg {
         font-size: 26px;

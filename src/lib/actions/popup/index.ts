@@ -16,6 +16,6 @@ const popupSlice = createSlice({
     }
 })
 
-export const popupReducer = popupSlice.reducer
+export const popup = popupSlice.reducer
 export const { setOpen } = popupSlice.actions
 export const selectedIsOpen = (state: RootState) => state.popup.isOpen;

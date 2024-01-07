@@ -2,29 +2,16 @@ import { navigationLinks } from "data/template"
 import cs from "./sidebar.module.scss"
 import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "hooks/useRedux/index"
-import { selectedIsOpen, setOpen } from "actions"
+import { logout, selectedIsOpen, setOpen } from "actions"
 import { CloseOutlined, LogoutOutlined } from "@ant-design/icons"
-import { useLogout } from "hooks/useLogout"
-import { useCurrentQuery } from "services"
-import Cookies from 'js-cookie';
-import { paths } from "paths"
 
 export const Sidebar = () => {
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
     const isOpen = useAppSelector(selectedIsOpen)
-    const { refetch } = useCurrentQuery()
 
     const onLogout = () => {
-        useLogout().then(() => {
-            const token = Cookies.get("token")
-
-            if (token) {
-                refetch()
-            } else {
-                navigate(paths.LOGIN)
-            }
-        })
+        dispatch(logout())
     }
 
     const onOpen = () => {

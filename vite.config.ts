@@ -19,7 +19,8 @@ export default defineConfig({
       types: "/src/models",
       api: "/src/api",
       middleware: "/src/middleware",
-      services: "/src/lib/services"
+      services: "/src/lib/services",
+      slices: "/src/lib/slices"
     }
   }
 })

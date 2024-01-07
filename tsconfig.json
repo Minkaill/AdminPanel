@@ -62,7 +62,8 @@
       "middleware": [
         "middleware"
       ],
-      "services": ["lib/services"]
+      "services": ["lib/services"],
+      "slices": ["lib/slices"]
     }
   },
   "include": [

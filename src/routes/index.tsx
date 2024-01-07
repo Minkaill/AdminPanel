@@ -18,30 +18,30 @@ export const router = createBrowserRouter([
     },
     {
         path: paths.PRODUCTS,
-        element: <Layout title="Продукты"><Products /></Layout>
+        element: <Layout text="Управляйте своими продуктами" title="Продукты"><Products /></Layout>
     },
     {
         path: paths.ORDERS,
-        element: <Layout title="Заказы"><Orders /></Layout>
+        element: <Layout text="Управляйте своими заказами" title="Заказы"><Orders /></Layout>
     },
     {
         path: paths.SETTINGS,
-        element: <Layout title="Настройки"><Settings /></Layout>
+        element: <Layout text="Настраивайте свой профиль и настройки" title="Настройки"><Settings /></Layout>
     },
     {
         path: paths.NOTIFICATION,
-        element: <Layout title="Уведомления"><Notification /></Layout>
+        element: <Layout text="Регулируйте свои уведомления" title="Уведомления"><Notification /></Layout>
     },
     {
         path: paths.NOTES,
-        element: <Layout title="Заметки"><Notes /></Layout>
+        element: <Layout text="Управляйте своими заметками" title="Заметки"><Notes /></Layout>
     },
     {
         path: paths.ACTIVESESSIONS,
-        element: <Layout title="Активны сеансы"><ActiveSessions /></Layout>
+        element: <Layout text="Будьте в курсе активных сеансов вашего аккаунта" title="Активны сеансы"><ActiveSessions /></Layout>
     },
     {
         path: paths.USERS,
-        element: <Layout title="Пользователи"><Users /></Layout>
+        element: <Layout text="Ваши клиенты" title="Пользователи"><Users /></Layout>
     },
 ])
