@@ -3,3 +3,8 @@ export interface Data {
     title: string,
     icon: React.ReactElement
 }
+
+export interface Columns {
+    title: string,
+    dataIndex: string
+}

@@ -1,37 +1,12 @@
-import React from "react";
-
 import { PlusOutlined, SearchOutlined } from "@ant-design/icons"
+import { TableProducts } from "./components/TableProducts";
 import { useGetProductsQuery } from "services";
-import { columns } from "./data";
+import { columnsProducts } from "data"
 
 import cs from "./products.module.scss"
 
 export const Products = () => {
     const { data, isLoading } = useGetProductsQuery()
-
-    if (isLoading) return <p>Loading...</p>
-
-    const tableColumns = () => {
-        return (
-            <>
-                {data?.data.map(({ id, attributes }) => (
-                    <React.Fragment key={id}>
-                        <tr>
-                            <td>{attributes.name}</td>
-                            <td>PT2004</td>
-                            <td>{attributes.categories.data.map(({ attributes }) => (
-                                <>{attributes.name}</>
-                            ))}</td>
-                            <td>Nike</td>
-                            <td>{attributes.price} ₽</td>
-                            <td>{attributes.old_price} ₽</td>
-                            <td>{attributes.amount}</td>
-                            <td>{attributes.is_on_sale ? "Да" : "Нет"}</td>
-                        </tr>
-                    </React.Fragment>
-                ))}</>
-        )
-    }
 
     return (
         <div className={cs.wrapper}>
@@ -50,15 +25,13 @@ export const Products = () => {
             <table className={cs.table}>
                 <thead>
                     <tr >
-                        {columns.map(({ title, dataIndex }) => (
+                        {columnsProducts.map(({ title, dataIndex }) => (
                             <th key={dataIndex}>{title}</th>
                         ))}
                     </tr>
                 </thead>
 
-                <tbody>
-                    {tableColumns()}
-                </tbody>
+                <TableProducts data={data} isLoading={isLoading} />
             </table>
         </div>
     )
