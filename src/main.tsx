@@ -7,18 +7,10 @@ import { store } from 'store';
 
 import './index.scss'
 import { Toaster } from 'react-hot-toast';
-import { ConfigProvider, theme } from 'antd';
-
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <Toaster />
-    <ConfigProvider
-      theme={{
-        algorithm: theme.darkAlgorithm,
-      }}
-    >
       <RouterProvider router={router} />
-    </ConfigProvider>
   </Provider>
 )
