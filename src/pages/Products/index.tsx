@@ -3,10 +3,12 @@ import { useGetProductsQuery } from "services";
 import { columnsProducts } from "data"
 
 import cs from "./products.module.scss"
-import { SearchTable } from "components/SearchTable";
+import { SearchTable } from "components";
 
 export const Products = () => {
     const { data, isLoading } = useGetProductsQuery()
+
+    if (data === undefined) return null
 
     return (
         <div className={cs.wrapper}>
