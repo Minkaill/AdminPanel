@@ -4,7 +4,12 @@ export interface Data {
     icon: React.ReactElement
 }
 
-export interface Columns {
+export interface ColumnsProducts {
+    title: string,
+    dataIndex: string
+}
+
+export interface ColumnsOrders {
     title: string,
     dataIndex: string
 }
