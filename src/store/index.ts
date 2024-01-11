@@ -2,14 +2,15 @@ import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
 import { popup } from "actions";
 import { api } from "api";
 import { listenerMiddleware } from "middleware";
-import { productsApi } from "services";
+import { ordersApi, productsApi } from "services";
 import { authorization } from 'actions';
 
 export const store = configureStore({
     reducer: {
         "api": api.reducer,
         "productsApi": productsApi.reducer,
-        
+        "ordersApi": ordersApi.reducer,
+
         authorization,
         popup
     },
