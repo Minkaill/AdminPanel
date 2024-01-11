@@ -5,8 +5,8 @@ export const SearchTable = () => {
     return (
         <div className={cs.header}>
             <div className={cs.live_search}>
-                <SearchOutlined />
-                <input type="text" />
+                {/* <SearchOutlined /> */}
+                <input type="text" placeholder="Введите название товара" />
             </div>
 
             <div className={cs.add}>
