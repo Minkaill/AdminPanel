@@ -18,7 +18,7 @@ export interface Attributes {
     old_price: string
     image: Image
     categories: Categories
-    brends: Brends
+    brend: Brends
 }
 
 export interface Image {
@@ -107,7 +107,12 @@ export interface Attributes3 {
 }
 
 export interface Brends {
-    data: any[]
+    data: BrendsDTO
+}
+
+export interface BrendsDTO {
+    id: number,
+    attributes: Attributes3
 }
 
 export interface Meta {
