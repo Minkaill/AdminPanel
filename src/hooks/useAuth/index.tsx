@@ -9,7 +9,6 @@ interface IsAuthProps {
 export const IsAuth: React.FC<IsAuthProps> = ({ children }) => {
     const { isLoading } = useCurrentQuery()
     const user = useAppSelector(userState)
-    console.log(user)
 
     if (isLoading) return <h1>Loading...</h1>;
 
