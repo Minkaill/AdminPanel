@@ -38,6 +38,17 @@
     }
 }
 
+.nav_element_active {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px;
+    transition: all 0.1s ease-in-out;
+    background-color: #FF7807;
+    border-radius: 4px;
+}
+
 .footer {
     width: 100%;
     flex-grow: 0;
