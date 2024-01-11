@@ -28,16 +28,16 @@
 .live_search {
     width: 100%;
     display: flex;
-    position: relative;
+    // position: relative;
 
-    svg {
-        position: absolute;
-        left: 6px;
-    }
+    // svg {
+    //     position: absolute;
+    //     left: 6px;
+    // }
 
     input {
         border: 1px solid rgba(62, 87, 90, 0.32);
-        padding: 8px 8px 8px 26px;
+        padding: 8px;
         background-color: #2b2b2d;
         border-radius: 4px;
         color: white;
