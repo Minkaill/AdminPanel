@@ -1,5 +1,5 @@
 import { api } from "api";
-import { Products } from "models/products";
+import { Products } from "models";
 
 export const productsApi = api.injectEndpoints({
     endpoints: (builder) => ({
