@@ -1,12 +1,11 @@
 import { navigationLinks } from "data/template"
 import cs from "./sidebar.module.scss"
-import { useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "hooks/useRedux/index"
 import { logout, selectedIsOpen, setOpen } from "actions"
 import { CloseOutlined, LogoutOutlined } from "@ant-design/icons"
 
 export const Sidebar = () => {
-    const navigate = useNavigate()
     const dispatch = useAppDispatch()
     const isOpen = useAppSelector(selectedIsOpen)
 
@@ -22,10 +21,12 @@ export const Sidebar = () => {
         <div className={cs.profile}></div>
         <div className={cs.nav_links}>
             {navigationLinks.map((nav, idx) => (
-                <div key={idx} onClick={() => navigate(nav.path)} className={cs.nav_element}>
+                <NavLink to={nav.path} key={idx}
+                    className={({ isActive, isPending }) =>
+                        isPending ? cs.nav_element : isActive ? cs.nav_element_active : cs.nav_element}>
                     {nav.icon}
                     <p>{nav.title}</p>
-                </div>
+                </NavLink>
             ))}
         </div>
 
