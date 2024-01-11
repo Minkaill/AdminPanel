@@ -1,30 +1,30 @@
-import { Products } from "models/products"
 import React from "react"
+import { Orders } from "types"
+
+import cs from "../../orders.module.scss"
+import { declineTovar } from "hooks"
 
 interface Tableprops {
-    data: Products | undefined
+    data: Orders
     isLoading: boolean
 }
 
-export const TableProducts: React.FC<Tableprops> = ({ data, isLoading }) => {
-    console.log(isLoading)
+export const TableOrders: React.FC<Tableprops> = ({ data, isLoading }) => {
     return (
         <tbody>
             {data?.data.map(({ id, attributes }) => (
                 <React.Fragment key={id}>
                     <tr>
-                        <td>{attributes.name}</td>
-                        <td>PT2004</td>
-                        <td>{attributes.categories.data.map(({ id, attributes }) => (
-                            <React.Fragment key={id}>{attributes.name}</React.Fragment>
-                        ))}</td>
-                        <td>Nike</td>
-                        <td>{attributes.price} ₽</td>
-                        <td>{attributes.old_price} ₽</td>
-                        <td>{attributes.amount}</td>
-                        <td>{attributes.is_on_sale ? "Да" : "Нет"}</td>
+                        <td>{id}</td>
+                        <td title="Посмотреть товары"><span className={cs.products_td}>
+                            {declineTovar(attributes.products.data.length)}
+                        </span></td>
+                        <td>{attributes.users_permissions_user.data.id}</td>
+                        <td>{attributes.products.data.reduce((acc, current) => acc + +current.attributes.price, 0)} ₽</td>
+                        <td>{attributes.payment_method}</td>
                     </tr>
                 </React.Fragment>
-            ))}</tbody>
+            ))}
+        </tbody>
     )
 }
