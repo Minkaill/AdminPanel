@@ -1,12 +1,15 @@
-import { useGetProductsQuery } from "services";
-import { columnsProducts } from "data"
+import { TableOrders } from "./components/TableOrders";
+import { SearchTable } from "components";
+
+import { useGetOrdersQuery } from "services";
+import { columnsOrders } from "data"
 
 import cs from "./orders.module.scss"
-import { SearchTable } from "components/SearchTable";
-import { TableProducts } from "./components/TableOrders";
 
 export const Orders = () => {
-    const { data, isLoading } = useGetProductsQuery()
+    const { data, isLoading } = useGetOrdersQuery()
+
+    if (data === undefined) return null
 
     return (
         <div className={cs.wrapper}>
@@ -15,13 +18,13 @@ export const Orders = () => {
             <table className={cs.table}>
                 <thead>
                     <tr >
-                        {columnsProducts.map(({ title, dataIndex }) => (
+                        {columnsOrders.map(({ title, dataIndex }) => (
                             <th key={dataIndex}>{title}</th>
                         ))}
                     </tr>
                 </thead>
 
-                <TableProducts data={data} isLoading={isLoading} />
+                <TableOrders data={data} isLoading={isLoading} />
             </table>
         </div>
     )
