@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { authApi } from "services";
-import { User } from "types";
+import { User, UserDTO } from "types";
 import { RootState } from 'store';
 
 interface UserState {
@@ -22,6 +22,10 @@ const authorizationSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addMatcher(authApi.endpoints.login.matchFulfilled, (state, action) => {
+                state.user = action.payload
+                state.isAuthenticated = true
+            })
+            .addMatcher(authApi.endpoints.current.matchFulfilled, (state, action: any) => {
                 state.user = action.payload
                 state.isAuthenticated = true
             })
