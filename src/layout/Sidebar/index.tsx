@@ -3,7 +3,7 @@ import cs from "./sidebar.module.scss"
 import { NavLink } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "hooks/useRedux/index"
 import { logout, selectedIsOpen, setOpen } from "actions"
-import { CloseOutlined, LogoutOutlined } from "@ant-design/icons"
+import { LogoutOutlined, MenuOutlined } from "@ant-design/icons"
 
 export const Sidebar = () => {
     const dispatch = useAppDispatch()
@@ -18,7 +18,15 @@ export const Sidebar = () => {
         dispatch(setOpen())
     }
 
-    return <div className={`${cs.wrapper} ${isOpen ? cs.wrapper_mb : ""}`}>
+    const onOpenSidebar = {
+        left: "0",
+    }
+
+    const onCloseSidebar = {
+        left: "-260px"
+    }
+
+    return <div style={isOpen ? onOpenSidebar : onCloseSidebar} className={cs.wrapper}>
         <div className={cs.profile}></div>
         <div className={cs.nav_links}>
             {navigationLinks.map((nav, idx) => (
@@ -39,7 +47,7 @@ export const Sidebar = () => {
         </div>
 
         <div onClick={onOpen} className={cs.sidebar_toggle}>
-            <CloseOutlined />
+            <MenuOutlined />
         </div>
     </div>
 }
