@@ -1,18 +1,21 @@
+import React from "react";
+
 import { TableProducts } from "./components/TableProducts";
 import { useGetProductsQuery } from "services";
+import { SearchTable } from "components";
 import { columnsProducts } from "data"
+import { SearchProps } from "types";
 
 import cs from "./products.module.scss"
-import { SearchTable } from "components";
 
-export const Products = () => {
+export const Products: React.FC<SearchProps> = ({ search }) => {
     const { data, isLoading } = useGetProductsQuery()
 
     if (data === undefined) return null
 
     return (
         <div className={cs.wrapper}>
-            <SearchTable />
+            {search && <SearchTable placeholder="Введите название товара" />}
 
             <table className={cs.table}>
                 <thead>

@@ -18,11 +18,11 @@ export const router = createBrowserRouter([
     },
     {
         path: paths.PRODUCTS,
-        element: <Layout text="Управляйте своими продуктами" title="Продукты"><Products /></Layout>
+        element: <Layout text="Управляйте своими продуктами" title="Продукты"><Products search={true} /></Layout>
     },
     {
         path: paths.ORDERS,
-        element: <Layout text="Управляйте своими заказами" title="Заказы"><Orders /></Layout>
+        element: <Layout text="Управляйте своими заказами" title="Заказы"><Orders search={true} /></Layout>
     },
     {
         path: paths.SETTINGS,
@@ -42,6 +42,6 @@ export const router = createBrowserRouter([
     },
     {
         path: paths.USERS,
-        element: <Layout text="Ваши клиенты" title="Пользователи"><Users /></Layout>
+        element: <Layout text="Ваши клиенты" title="Пользователи"><Users search={true} /></Layout>
     },
 ])

@@ -20,7 +20,7 @@ export const Login = () => {
     })
 
     const onSubmit: SubmitHandler<UserLG> = (data) => {
-        toast.promise(onLogin(data).unwrap().then((dt) => {
+        toast.promise(onLogin(data).then((dt) => {
             if (dt) {
                 navigate(paths.HOME)
             }
