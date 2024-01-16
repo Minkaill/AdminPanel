@@ -7,10 +7,13 @@ import { store } from 'store';
 
 import './index.scss'
 import { Toaster } from 'react-hot-toast';
+import { IsAuth } from 'hooks';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <Toaster />
+    <IsAuth>
       <RouterProvider router={router} />
+    </IsAuth>
   </Provider>
 )
