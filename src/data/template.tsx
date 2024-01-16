@@ -1,5 +1,5 @@
 import { DatabaseOutlined, HomeOutlined, NotificationOutlined, PushpinOutlined, SettingOutlined, ShopOutlined, UserOutlined, WindowsOutlined } from "@ant-design/icons";
-import { ColumnsOrders, ColumnsProducts, Data } from "./types";
+import { Columns, Data } from "./types";
 
 export const navigationLinks: Data[] = [
     { path: "/", title: "Главная", icon: <HomeOutlined /> },
@@ -12,7 +12,7 @@ export const navigationLinks: Data[] = [
     { path: "/active-sessions", title: "Активные сеансы", icon: <WindowsOutlined /> },
 ]
 
-export const columnsProducts: ColumnsProducts[] = [
+export const columnsProducts: Columns[] = [
     {
         title: 'Название',
         dataIndex: 'name',
@@ -47,7 +47,7 @@ export const columnsProducts: ColumnsProducts[] = [
     },
 ];
 
-export const columnsOrders: ColumnsOrders[] = [
+export const columnsOrders: Columns[] = [
     {
         title: 'Заказ id',
         dataIndex: 'id',
@@ -69,3 +69,26 @@ export const columnsOrders: ColumnsOrders[] = [
         dataIndex: 'payment_method',
     }
 ];
+
+export const columnsUsers: Columns[] = [
+    {
+        title: "Имя пользователя",
+        dataIndex: "username"
+    },
+    {
+        title: "Электронная почта",
+        dataIndex: "email"
+    },
+    {
+        title: "Роль",
+        dataIndex: "role"
+    },
+    {
+        title: "Статус",
+        dataIndex: "confirmed"
+    },
+    {
+        title: "Идентификатор (id)",
+        dataIndex: "id"
+    }
+]
