@@ -11,6 +11,7 @@ export const Sidebar = () => {
 
     const onLogout = () => {
         dispatch(logout())
+        window.location.reload()
     }
 
     const onOpen = () => {
